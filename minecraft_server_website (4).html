@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAFT SERVER | Ultimate</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #050816, #02030a);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    canvas#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 50px;
+      background: linear-gradient(90deg,#22c55e,#60a5fa);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      padding:10px;
+      background:rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    nav button {
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #333;
+      background:transparent;
+      color:white;
+      cursor:pointer;
+    }
+
+    nav button.active { background:#22c55e; color:black; }
+
+    section {
+      display:none;
+      position:relative;
+      z-index:2;
+      max-width:1100px;
+      margin:auto;
+      padding:30px;
+    }
+
+    section.active { display:block; }
+
+    .card {
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:15px;
+      border-radius:12px;
+      margin-bottom:10px;
+    }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; }
+
+    .shop-item button { margin-top:10px; width:100%; padding:8px; }
+
+    .ip { background:#111; padding:10px; border-radius:10px; display:inline-block; }
+  </style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+  <h1>RAFT SERVER</h1>
+  <p>Экономика • PvP • Кланы • Банк • Магазин • Донат • Онлайн</p>
+  <div class="ip">play.server.ru</div>
+</header>
+
+<nav>
+  <button class="active" onclick="openTab('news',this)">Новости</button>
+  <button onclick="openTab('info',this)">Инфо</button>
+  <button onclick="openTab('shop',this)">Магазин</button>
+  <button onclick="openTab('account',this)">Аккаунт</button>
+  <button onclick="openTab('map',this)">Карта</button>
+</nav>
+
+<section id="news" class="active">
+  <div class="card">🔥 Обновление банка и экономики</div>
+  <div class="card">⚔️ Новый PvP сезон</div>
+</section>
+
+<section id="info">
+  <div class="card">IP: play.server.ru</div>
+  <div class="card">Версия: 1.21+</div>
+  <div class="card" id="online">Онлайн: загрузка...</div>
+</section>
+
+<section id="shop">
+  <div class="grid">
+    <div class="card shop-item">
+      <h3>VIP</h3>
+      <p>Привилегии</p>
+      <button onclick="buy('VIP')">Купить</button>
+    </div>
+    <div class="card shop-item">
+      <h3>Монеты</h3>
+      <p>Игровая валюта</p>
+      <button onclick="buy('COINS')">Купить</button>
+    </div>
+  </div>
+</section>
+
+<section id="account">
+  <div class="card">
+    <h3>Личный кабинет</h3>
+    <p id="user">Не авторизован</p>
+    <button onclick="auth('telegram')">Telegram Login</button>
+    <button onclick="auth('discord')">Discord Login</button>
+    <p id="balance">Баланс: 0</p>
+  </div>
+</section>
+
+<section id="map">
+  <div class="card">
+    <h3>Live карта</h3>
+    <iframe style="width:100%;height:400px;border:0" src="https://mapcrafter.org/"></iframe>
+  </div>
+</section>
+
+<script>
+let user=null;
+let balance=0;
+
+function openTab(id,btn){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function auth(type){
+  user=type+"_"+Math.floor(Math.random()*99999);
+  document.getElementById('user').innerText="User: "+user;
+  balance=1000;
+  document.getElementById('balance').innerText="Баланс: "+balance;
+}
+
+function buy(item){
+  if(balance<100){alert('Недостаточно средств');return;}
+  balance-=100;
+  document.getElementById('balance').innerText="Баланс: "+balance;
+  alert('Куплено: '+item);
+}
+
+// fake online
+setInterval(()=>{
+  document.getElementById('online').innerText="Онлайн: "+Math.floor(Math.random()*120)+" игроков";
+},2000);
+
+// particles
+const c=document.getElementById('particles');
+const ctx=c.getContext('2d');
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+let p=[];
+for(let i=0;i<100;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2});
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+ctx.fillStyle="white";
+for(let i of p){ctx.beginPath();ctx.arc(i.x,i.y,i.r,0,Math.PI*2);ctx.fill();i.y+=0.4;if(i.y>c.height)i.y=0;}
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
