@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body
+{
+ font-family: 'Roboto', sans-serif;
+ margin: 0;
+    background: linear-gradient(#00e4be, #009b8e);
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+/* КНОПКИ */
+/* index.html */
+.navbar
+{   
+
+    font-weight: 900;
+
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.navbar a
+{
+    background: #ffffff34;
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+    scale: 0.8;
+}
+
+.navbar a:hover
+{
+    background: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.logo img
+{
+    width: 100px;
+    margin-right: 50px;
+    transition: transform 1s ease;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.logo img:hover 
+{
+    scale: 1.05;
+
+    transform: rotateX(360deg);
+}
+
+
+/* ГЛАВНАЯ СТРАНИЦА */
+
+.hero
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 150px;
+
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: -100px;
+}
+
+.hero-text
+{
+    color: #fff;
+}
+
+.hero-text h1
+{   
+    width: 800px;
+    font-size: 48px;
+    color: #fff;
+    line-height: 0.7;
+    
+}
+
+.hero-text p
+{  
+    line-height: 1;
+    width: 430px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.hero-image img
+{
+    width: 200px;
+    border-radius: 20px;
+}
+
+h1, p
+{
+    margin: 10px;
+}
+
+.btn-more
+{
+    font-weight: 900;
+    margin-top: 1px;
+    margin-left: 50px;
+    display: inline-block;
+
+    background: #ffffff42;
+    color: #ffffff;
+    
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.btn-more:hover
+{   
+    color: #000000;
+    background: rgb(255, 255, 255);
+    transform: scale(1.08);
+}
+
+/* info */
+
+.info
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -250px;
+    padding: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.info-text
+{
+    color: #fff;
+}
+
+.info-text h1
+{   
+    width: 800px;
+    font-size: 48px;
+    color: #fff;
+    line-height: 0.7;
+    
+}
+
+.info-text p
+{  
+    line-height: 1;
+    width: 800px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.info-image img
+{
+
+    width: 250px;
+    border-radius: 20px;
+}
+
+h1, p
+{
+    margin: 10px;
+}
+
+
+/* О НАС */
+
+.info-klever
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: -100px;
+    margin-left: 300px;
+    margin-right: 300px;
+
+    color: #fff;
+}
+
+.info-table
+{
+    font-weight: 900;
+    font-size: 13px;
+
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.info-table H1
+{   
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    width: 1200px;
+    background: #ffffff48;
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 15px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+    scale: 0.8;
+}
+
+.info-table H1:hover
+{
+    scale: 1.1;
+    color: #000;
+    background: #fff;
+}
+
+
+
+
+
+
+
+
+.one
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    padding: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.one-text
+{
+    color: #fff;
+}
+
+.one-text h1
+{   
+    width: 800px;
+    font-size: 48px;
+    color: #fff;
+    line-height: 0.7;
+    
+}
+
+.one-text p
+{  
+    line-height: 1;
+    width: 800px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.one-image img
+{
+
+    width: 250px;
+    border-radius: 20px;
+}
+
+h1, p
+{
+    margin: 10px;
+}
+
+
+
+.accept
+{
+    background: #ffffff59;
+    padding: 20px;
+}
+
+.text-accept
+{
+    margin-left: 300PX;
+    margin-right: 300PX;
+    color: #fff;
+    font-size: 10px;
+}
+
+
+
+/* news.html */
+
+
+.news-container
+{   
+    font-weight: 900;
+    text-align: center;
+    color: #000000;
+    padding: 60px 20px;
+}
+
+.news-card
+{
+    background: rgb(255, 255, 255);
+
+    max-width: 600px;
+
+    margin: 20px auto;
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.news-card:hover
+{
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    h5
+    {
+        color: #fff;
+    }
+}
+
+.date
+{
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+h5
+{
+    color: #000;
+    font-size: 20px;
+}
+
+
+/* apply.html */
+
+
+
+.apply-container 
+{
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+
+  background: rgba(0,0,0,0.6);
+  border-radius: 15px;
+
+  text-align: center;
+  color: white;
+}
+
+.apply-container input,
+.apply-container textarea 
+{
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+
+  border-radius: 10px;
+  border: none;
+}
+
+.apply-container button 
+{
+  font-weight: 900;
+  width: 250px;
+  padding: 10px;
+
+  background: rgb(255, 255, 255);
+  border: none;
+  color: rgb(0, 0, 0);
+
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.apply-container button:hover
+{
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+/* shop.html */
+
+
+.grid 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.card 
+{
+    font-weight: 900;
+    background: #ffffff2a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+
+
+
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    color: #fff;
+}
+
+button 
+{
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+h6
+{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    margin: 10px;
+    font-weight: 900;
+}
