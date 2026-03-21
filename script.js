@@ -16,12 +16,18 @@ function buy(item) {
       item
     })
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.whitelist) {
-      alert("Ты добавлен в вайтлист ✔");
+  .then(async res => {
+    const data = await res.json();
+    console.log("RESPONSE:", data);
+
+    if (data.success) {
+      alert("Успешно ✔");
     } else {
-      alert("Ошибка");
+      alert("Ошибка: " + (data.error || "unknown"));
     }
+  })
+  .catch(err => {
+    console.error("FETCH ERROR:", err);
+    alert("Сервер недоступен");
   });
 }
