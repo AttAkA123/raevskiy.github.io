@@ -2,12 +2,13 @@ const webhookURL = "https://discord.com/api/webhooks/1484577768401408002/V9fGpUF
 
 function sendApplication() {
 
+  const name = document.getElementById("name").value;
   const nickname = document.getElementById("nickname").value;
-  const Discord = document.getElementById("Discord").value;
   const age = document.getElementById("age").value;
-  const reason = document.getElementById("reason").value;
+  const wear = document.getElementById("wear").value;
+  const Discord = document.getElementById("Discord").value;
 
-  if (!nickname || !age || !reason) {
+  if (!name || !nickname || !age || !wear || !Discord) {
     alert("Заполни все поля!");
     return;
   }
@@ -19,10 +20,11 @@ function sendApplication() {
         title: "Заявка игрока",
         color: 16753920,
         fields: [
-          { name: "Discord", value: Discord },
+          { name: "Имя", value: name },
           { name: "Ник", value: nickname },
           { name: "Возраст", value: age },
-          { name: "Причина", value: reason }
+          { name: "Причина", value: wear },
+          { name: "Дискорд", value: Discord }
         ]
       }
     ]
@@ -36,5 +38,5 @@ function sendApplication() {
     body: JSON.stringify(message)
   });
 
-  alert("Заявка отправлена!");
+  alert("Заявка отправлена! Ожидайте ответа.");
 }

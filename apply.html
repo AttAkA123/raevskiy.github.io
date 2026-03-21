@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLEVER NEWS</title>
+    <title>KLEVER ANKETA</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -16,16 +16,51 @@
         <a href="shop.html">МАГАЗИН</a>
     </div>
 
-    <div class="class apply-container">
-        <h2>📩 Заявка на сервер</h2>
+        <div class="class apply-info">
+        <div class="class apply-info-text">
+            <h1>🔥 АНКЕТА</h1>
+            <p>Не хотите ждать одобрения анкеты?
+Вы можете оформить проходку и получить доступ к серверу мгновенно.
 
-        <input id="nickname" type="text" placeholder="Ник в Minecraft">
-        <input id="Discord" type="text" placeholder="Ваш Discord">
+Либо заполните анкету — мы рассмотрим её в порядке очереди.
+Оба варианта открыты для вас.</p>  
+        
+            <a href="shop.html" class="btn-shop">МАГАЗИН</a>
+        </div>
+        <div class="class apply-info-image">
+            <img src="./Image/lay.png" alt="server">
+        </div>
+    </div>
+
+    <div class="class apply-container">
+        <h2>Заявка на сервер</h2>
+        <p>Как к вам обращаться</p>
+        <input id="name" type="text" placeholder="Ваше реальное имя">
+        <p>Ваш никнейм в игре?</p>
+        <input id="nickname" type="text" placeholder="Ваш никнейм в игре">
+        <p>Сколько вам лет?</p>
         <input id="age" type="number" placeholder="Возраст">
-        <textarea id="reason" placeholder="Почему хочешь играть?"></textarea>
+        <p>Откуда узнали о нас?</p>
+        <input id="wear" type="text" placeholder="Узнал там то там ;)">
+        <p>Ваш Discord (для связи)</p>
+        <input id="Discord" type="text" placeholder="Ваш Discord">
+        
     
         <button onclick="sendApplication()">Отправить заявку</button>
     
+    </div>
+
+        <div class="class accept">
+        <div class="class iconss">
+                
+        </div>
+            <div class="class text-accept">
+                <img src="./Image/icon/Logo.png" alt="klever">
+                <h1>© Все права защищены. Klever, 2026.</h1>
+                <h1>We are in no way affiliated with or endorsed by Mojang, AB.</h1>
+                <h1>by.Yruy Raevskiy (KLEVER)</h1>
+
+            </div>
     </div>
 
 <script src="apply.js"></script>

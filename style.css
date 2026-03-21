@@ -4,8 +4,11 @@ body
 {
  font-family: 'Roboto', sans-serif;
  margin: 0;
-    background: linear-gradient(#00e4be, #009b8e);
+background: linear-gradient(#00aeff, #004155)
+
 }
+
+
 
 html
 {
@@ -260,9 +263,6 @@ h1, p
 
 
 
-
-
-
 .one
 {
     display: flex;
@@ -331,52 +331,94 @@ h1, p
 /* news.html */
 
 
-.news-container
-{   
-    font-weight: 900;
-    text-align: center;
-    color: #000000;
-    padding: 60px 20px;
-}
 
-.news-card
+.news-text
 {
-    background: rgb(255, 255, 255);
-
-    max-width: 600px;
-
-    margin: 20px auto;
-    padding: 20px;
-
-    border-radius: 15px;
-
-    text-align: left;
-
-    transition: 0.3s;
-}
-
-.news-card:hover
-{
-    transform: translateY(-5px);
-    background: rgba(0, 0, 0, 0.15);
     color: #fff;
-    h5
-    {
-        color: #fff;
-    }
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    margin-top: 25px;
 }
 
-.date
+.news-table
 {
-    font-size: 12px;
-    opacity: 0.7;
-}
+    padding: 50px;
+    background: #ffffff5b;
+    border-radius: 20px;
 
-h5
-{
     color: #000;
-    font-size: 20px;
+    font-size: 10px;
+
+    margin-left: 500px;
+    margin-right: 500px;
+
 }
+
+
+
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: -100px;
+  .news-content H3
+  {
+    color: #fff;
+  }
+  margin-bottom: 300px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 25    px;
+}
+
+.news-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 15px;
+}
+
+.news-content h3 {
+  margin: 0 0 10px;
+}
+
+.news-content p {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.date {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+}
+
+
+
+
 
 
 /* apply.html */
@@ -385,25 +427,42 @@ h5
 
 .apply-container 
 {
-  width: 400px;
-  margin: 100px auto;
-  padding: 30px;
+  width: 800px;
+  margin: auto auto;
+  padding: 10px;
 
-  background: rgba(0,0,0,0.6);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
 
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+
+  margin-bottom: 100px;
+  margin-top: -100px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    
+}
+
+.apply-container p
+{
+    color: #0066ff;
+    font-size: 15px;
+    margin-bottom: -10px;
+    margin-left: 35px;
+    display: flex;
 }
 
 .apply-container input,
 .apply-container textarea 
 {
-  width: 100%;
-  margin: 10px 0;
+  width: 90%;
+  margin: 10px 10px;
   padding: 10px;
 
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
 }
 
@@ -423,9 +482,89 @@ h5
 
 .apply-container button:hover
 {
-    background: #000;
+    background: #0099ff;
     color: #fff;
 }
+
+
+
+
+.apply-info
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    padding: 150px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.apply-info-text
+{
+    color: #fff;
+}
+
+.apply-info-text h1
+{   
+    width: 500px;
+    font-size: 48px;
+    color: #fff;
+    line-height: 0.7;
+    
+}
+
+.apply-info-text p
+{  
+    line-height: 1;
+    width: 800px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.apply-info-image img
+{
+
+    width: 450px;
+    border-radius: 20px;
+}
+
+
+
+
+
+.btn-shop
+{
+    font-weight: 900;
+    display: inline-block;
+
+    background: #ffffff42;
+    color: #ffffff;
+    
+
+
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); 
+}
+
+.btn-shop:hover
+{
+    color: #000000;
+    background: rgb(255, 255, 255);
+    transform: scale(1.08);
+}
+
+
 
 
 
@@ -440,7 +579,7 @@ h5
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 500px;
   margin-left: 250px;
   margin-right: 250px;
 }
@@ -457,7 +596,7 @@ h5
     padding: 20px;
     border-radius: 12px;
     width: 200px;
-    color: #fff;
+    color: #ffffff;
 }
 
 button 
@@ -465,11 +604,19 @@ button
   margin-top: 10px;
   width: 100%;
   padding: 10px;
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.212);
   border: none;
   cursor: pointer;
   font-weight: bold;
   border-radius: 15px;
+    font-weight: 900;
+    color: #fff;
+}
+
+button:hover 
+{
+    color: #000000;
+    background: #fff;
 }
 
 h6
@@ -480,4 +627,18 @@ h6
     font-size: 30px;
     margin: 10px;
     font-weight: 900;
+}
+
+
+.nickname-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nickname-box input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  width: 250px;
 }
