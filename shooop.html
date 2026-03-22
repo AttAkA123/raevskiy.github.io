@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop</title>
+</head>
+<body>
+
+<h1>Магазин Minecraft</h1>
+
+<button onclick="buyVIP()">Купить VIP</button>
+
+<script>
+async function buyVIP() {
+  const res = await fetch("http://5.42.109.215:3000/create-payment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      nickname: "TestPlayer"
+    })
+  });
+
+  const data = await res.json();
+
+  if (data.paymentUrl) {
+    window.location.href = data.paymentUrl;
+  } else {
+    alert("Ошибка создания платежа");
+    console.log(data);
+  }
+}
+</script>
+
+</body>
+</html>
